@@ -1,0 +1,9 @@
+{
+  "properties": {
+    "id":{"type":"keyword"},
+    "source": {"type": "text", "fielddata": true},
+    "destination":{"type": "text", "fielddata": true},
+    "descriptionKeys": { "type": "text", "fielddata": true},
+    "priority": {"type": "integer"}
+  }
+}
