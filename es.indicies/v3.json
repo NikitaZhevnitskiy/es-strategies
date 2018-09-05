@@ -1,0 +1,82 @@
+{
+  "mappings": {
+    "case": {
+      "properties": {
+        "caseId": {"type": "keyword"},
+        "parentCaseId": {"type": "keyword"},
+        "creation": {"type": "text", "fielddata": true},
+        "modification": {"type": "text", "fielddata": true},
+        "messageId": {"type": "keyword"},
+        "source": {"type": "text", "fielddata": true},
+        "destination":{"type": "text", "fielddata": true},
+        "detail": {
+          "properties": {
+            "description": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "metadata": {
+              "properties": {
+                "KIS_customerID": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "KIS_objectID": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                }
+              }
+            },
+            "priority": {
+              "type": "long"
+            },
+            "title": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "tipId":{"type": "text", "fielddata": true},
+        "assignedTo": {"type": "keyword"},
+        "assignedOperator": {"type": "object"}
+      }
+    },
+    "tip-id-pattern": {
+      "properties": {
+        "tipId":{"type":"text", "fielddata": true},
+        "source": {"type": "text", "fielddata": true},
+        "destination":{"type": "text", "fielddata": true},
+        "description_keys": { "type": "text", "fielddata": true}
+      }
+    },
+    "priority": {
+      "properties": {
+        "id":{"type":"keyword"},
+        "source": {"type": "text", "fielddata": true},
+        "destination":{"type": "text", "fielddata": true},
+        "descriptionKeys": { "type": "text", "fielddata": true},
+        "priority": {"type": "integer"}
+      }
+    }
+  }
+}

@@ -31,8 +31,17 @@
             }
           }
         },
+        "tipId":{"type": "text", "fielddata": true},
         "assignedTo": {"type": "keyword"},
         "assignedOperator": {"type": "object"}
+      }
+    },
+    "tip-id-pattern": {
+      "properties": {
+        "tipId":{"type":"text", "fielddata": true},
+        "source": {"type": "text", "fielddata": true},
+        "destination":{"type": "text", "fielddata": true},
+        "description_keys": { "type": "text", "fielddata": true}
       }
     }
   }
